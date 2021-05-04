@@ -1,0 +1,730 @@
+body{
+    background-color: rgb(148, 163, 228);
+}
+img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+textarea{
+    width: 242px;
+    height: 300px;
+    padding: 10px;
+    resize: none;
+    overflow: hidden;
+    font-size: 18px;
+    outline: none;
+}
+
+.gameBox{
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ===== showBox start ===== */
+
+.showBox{
+    width: 800px;
+    margin-top: 30px;
+    position: relative;
+    transform-origin: top left;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.8));
+    flex-shrink: 0;
+    
+}
+
+.showBtn{
+    width: 136.5px;
+    height: 39px;
+    background-image: url(../img/menuBtn_off.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 19px;
+    color: #54381b;
+}
+
+.showBtn.on{
+    background-image: url(../img/menuBtn_on.png);
+}
+
+.showBtn_01{
+    top: 18px;
+    right: 208px;
+}
+
+.showBtn_02{
+    top: 18px;
+    right: 70px;
+}
+
+.showName{
+    height: 30px;
+    line-height: 34px;
+    font-size: 25px;
+    position: absolute;
+    top: 17px;
+    left: 150px;
+    color: #fff;
+    opacity: 0.6;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.showMsg{
+    position: absolute;
+    top: 119px;
+    left: 28px;
+    color: rgb(131, 18, 18); 
+    background: transparent;
+    border: none;  
+}
+
+.showlist{
+    width: 484px;
+    height: 313px;
+    position: absolute;
+    top: 119px;
+    right: 26px;
+    border-radius: 0 0 35px 35px;
+    overflow: hidden;
+}
+
+.showlist ul{
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.showlist li{
+    width: 50%;
+    padding: 7px 5px;
+}
+
+.showlist li>div{
+    height: 60px;
+    padding: 0 5px;
+    border-radius: 5px;
+    background-color: #f4ead3;
+    box-shadow: 3px 3px 2px rgb(61, 5, 5);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.showlist .listImg{
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+/* 農作物 */
+.showlist li>div[data-num="1"] .listImg{
+    background-image: url(../img/ts01.png);
+}   
+.showlist li>div[data-num="2"] .listImg{
+    background-image: url(../img/ts02.png);
+}   
+.showlist li>div[data-num="3"] .listImg{
+    background-image: url(../img/ts03.png);
+}   
+.showlist li>div[data-num="4"] .listImg{
+    background-image: url(../img/ts04.png);
+} 
+.showlist li>div[data-num="5"] .listImg{
+    background-image: url(../img/ts05.png);
+} 
+.showlist li>div[data-num="6"] .listImg{
+    background-image: url(../img/ts06.png);
+} 
+.showlist li>div[data-num="7"] .listImg{
+    background-image: url(../img/ts07.png);
+} 
+.showlist li>div[data-num="8"] .listImg{
+    background-image: url(../img/ts08.png);
+} 
+.showlist li>div[data-num="9"] .listImg{
+    background-image: url(../img/ts09.png);
+} 
+
+/* 飲料 */
+.showlist li>div[data-num="10"] .listImg{
+    background-image: url(../img/w01.png);
+} 
+.showlist li>div[data-num="11"] .listImg{
+    background-image: url(../img/w02.png);
+} 
+.showlist li>div[data-num="12"] .listImg{
+    background-image: url(../img/w03.png);
+} 
+.showlist li>div[data-num="13"] .listImg{
+    background-image: url(../img/w04.png);
+} 
+.showlist li>div[data-num="14"] .listImg{
+    background-image: url(../img/w05.png);
+} 
+.showlist li>div[data-num="15"] .listImg{
+    background-image: url(../img/w06.png);
+} 
+
+/* 基肥 */
+.showlist li>div[data-num="16"] .listImg{
+    background-image: url(../img/g01.png);
+} 
+.showlist li>div[data-num="17"] .listImg{
+    background-image: url(../img/g02.png);
+} 
+.showlist li>div[data-num="18"] .listImg{
+    background-image: url(../img/g03.png);
+} 
+.showlist li>div[data-num="19"] .listImg{
+    background-image: url(../img/g04.png);
+} 
+
+/* 肥料 */
+.showlist li>div[data-num="20"] .listImg{
+    background-image: url(../img/f01.png);
+} 
+.showlist li>div[data-num="21"] .listImg{
+    background-image: url(../img/f02.png);
+} 
+.showlist li>div[data-num="22"] .listImg{
+    background-image: url(../img/f03.png);
+} 
+.showlist li>div[data-num="23"] .listImg{
+    background-image: url(../img/f04.png);
+} 
+.showlist li>div[data-num="24"] .listImg{
+    background-image: url(../img/f05.png);
+} 
+
+/* 床土 */
+.showlist li>div[data-num="25"] .listImg{
+    background-image: url(../img/h01.png);
+} 
+.showlist li>div[data-num="26"] .listImg{
+    background-image: url(../img/h02.png);
+} 
+.showlist li>div[data-num="27"] .listImg{
+    background-image: url(../img/h03.png);
+} 
+.showlist li>div[data-num="28"] .listImg{
+    background-image: url(../img/h04.png);
+} 
+
+/* 堆肥 */
+.showlist li>div[data-num="29"] .listImg{
+    background-image: url(../img/d01.png);
+} 
+.showlist li>div[data-num="30"] .listImg{
+    background-image: url(../img/d02.png);
+} 
+.showlist li>div[data-num="31"] .listImg{
+    background-image: url(../img/d03.png);
+} 
+.showlist li>div[data-num="32"] .listImg{
+    background-image: url(../img/d04.png);
+}
+
+/* 酵素 */
+.showlist li>div[data-num="33"] .listImg{
+    background-image: url(../img/s01.png);
+} 
+.showlist li>div[data-num="34"] .listImg{
+    background-image: url(../img/s02.png);
+}
+
+/* 農業用土壤 */
+.showlist li>div[data-num="35"] .listImg{
+    background-image: url(../img/t01.png);
+} 
+.showlist li>div[data-num="36"] .listImg{
+    background-image: url(../img/t02.png);
+}
+
+/* 魚餌 */
+.showlist li>div[data-num="37"] .listImg{
+    background-image: url(../img/u01.png);
+} 
+.showlist li>div[data-num="38"] .listImg{
+    background-image: url(../img/u02.png);
+}
+
+/* 飲料製作材料 */
+.showlist li>div[data-num="39"] .listImg{
+    background-image: url(../img/gw01.png);
+} 
+.showlist li>div[data-num="40"] .listImg{
+    background-image: url(../img/gw02.png);
+} 
+.showlist li>div[data-num="41"] .listImg{
+    background-image: url(../img/gw03.png);
+} 
+.showlist li>div[data-num="42"] .listImg{
+    background-image: url(../img/gw04.png);
+}
+
+/* 肥料製作材料 */
+.showlist li>div[data-num="43"] .listImg{
+    background-image: url(../img/gf01.png);
+} 
+.showlist li>div[data-num="44"] .listImg{
+    background-image: url(../img/gf02.png);
+} 
+.showlist li>div[data-num="45"] .listImg{
+    background-image: url(../img/gf03.png);
+} 
+.showlist li>div[data-num="46"] .listImg{
+    background-image: url(../img/gf04.png);
+}
+
+/* 裝備製作材料 */
+.showlist li>div[data-num="47"] .listImg{
+    background-image: url(../img/gg01.png);
+} 
+.showlist li>div[data-num="48"] .listImg{
+    background-image: url(../img/gg02.png);
+} 
+.showlist li>div[data-num="49"] .listImg{
+    background-image: url(../img/gg03.png);
+} 
+.showlist li>div[data-num="50"] .listImg{
+    background-image: url(../img/gg04.png);
+} 
+.showlist li>div[data-num="51"] .listImg{
+    background-image: url(../img/gg05.png);
+} 
+
+/* 農具製作材料 */
+.showlist li>div[data-num="52"] .listImg{
+    background-image: url(../img/gl01.png);
+}   
+.showlist li>div[data-num="53"] .listImg{
+    background-image: url(../img/gl02.png);
+}   
+.showlist li>div[data-num="54"] .listImg{
+    background-image: url(../img/gl03.png);
+}   
+.showlist li>div[data-num="55"] .listImg{
+    background-image: url(../img/gl04.png);
+} 
+.showlist li>div[data-num="56"] .listImg{
+    background-image: url(../img/gl05.png);
+} 
+.showlist li>div[data-num="57"] .listImg{
+    background-image: url(../img/gl06.png);
+} 
+.showlist li>div[data-num="58"] .listImg{
+    background-image: url(../img/gl07.png);
+} 
+.showlist li>div[data-num="59"] .listImg{
+    background-image: url(../img/gl08.png);
+} 
+
+.showlist .listTitle{  
+    width: 100%;
+    height: 50px;
+    padding-top: 24px;
+    padding-left: 10px;
+    border-left: 2px solid rgb(194, 194, 194);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.listName{
+    width: 120px;
+    height: 39px;
+    line-height: 39px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../img/event-label04.svg);
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+    top: -9px;
+    right: 1px;
+    color: #fff;
+    filter: drop-shadow(0px 2px 3px rgba(41, 3, 3, 0.8));
+    z-index: 2;
+}
+
+.showlist li>div[data-num="1"] .listName,
+.showlist li>div[data-num="2"] .listName,
+.showlist li>div[data-num="3"] .listName,
+.showlist li>div[data-num="4"] .listName{
+    background-image: url(../img/event-label02.svg);
+}  
+
+.showlist li>div[data-num="5"] .listName,
+.showlist li>div[data-num="6"] .listName,
+.showlist li>div[data-num="7"] .listName,
+.showlist li>div[data-num="8"] .listName,
+.showlist li>div[data-num="9"] .listName,
+.showlist li>div[data-num="10"] .listName{
+    background-image: url(../img/event-label03.svg);
+}  
+
+.showlist li>div[data-num="11"] .listName,
+.showlist li>div[data-num="12"] .listName,
+.showlist li>div[data-num="13"] .listName,
+.showlist li>div[data-num="14"] .listName{
+    background-image: url(../img/event-label05.svg);
+}  
+
+.showlist li>div[data-num="15"] .listName,
+.showlist li>div[data-num="16"] .listName,
+.showlist li>div[data-num="17"] .listName,
+.showlist li>div[data-num="18"] .listName{
+    background-image: url(../img/event-label01.svg);
+}  
+
+.showlist li>div[data-num="19"] .listName,
+.showlist li>div[data-num="20"] .listName,
+.showlist li>div[data-num="21"] .listName,
+.showlist li>div[data-num="22"] .listName{
+    background-image: url(../img/event-label06.svg);
+    color: #745331;
+}  
+
+
+.showlist .listTitle p{
+    max-width: 135px;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: bold;
+    color: #b35f28;
+    margin-top: 1px;
+}
+
+.showlist li:hover .del{
+    display: block;
+}
+
+.showlist .del{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;   
+    border-radius: 5px;
+    color: #fff;
+    background:#000 url(../img/close.svg) no-repeat center/22%;
+    opacity: 0.85;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+/* ===== iptBox  start ===== */
+
+.iptBox{
+    width: 100%;
+    max-width: 254px;
+    padding: 5px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.iptBox button{
+    width: 242px;
+    height: 35px;
+    background-color: #93593d;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.iptBox button span{
+    position: relative;
+    z-index: 1;
+}
+
+.iptBox button::before{
+    content: '';
+    width: 0%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    transform: skew(40deg) translateX(-20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+.iptBox button:hover::before{
+    width: 90%;
+}
+
+.iptBox button:active{
+    transform: translateY(2px);
+}
+
+.textBox{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.iptName{
+    width: 242px;
+    height: 40px;
+    font-size: 16px;
+    padding: 0 5px;
+    margin-bottom: 5px;
+    border: none;
+    outline: none;
+}
+
+.iptText{
+   margin-bottom: 5px;
+   border: none;
+}
+
+
+
+.selBox>div{
+    width: 242px;
+    display: flex;
+    flex-direction: column;
+}
+
+.selBox select{
+    width: 100%;
+    height: 35px;
+    margin-bottom: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.selBox input{
+    width: 100%;
+    height: 35px;
+    padding: 0 5px;
+    font-size: 16px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+}
+
+.sel option{
+    display: none;
+}
+.sel[data-sort="1"] option[data-sort="1"]{
+    display: block;
+}
+.sel[data-sort="2"] option[data-sort="2"]{
+    display: block;
+}
+.sel[data-sort="3"] option[data-sort="3"]{
+    display: block;
+}
+.sel[data-sort="4"] option[data-sort="4"]{
+    display: block;
+}
+.sel[data-sort="5"] option[data-sort="5"]{
+    display: block;
+}
+.sel[data-sort="6"] option[data-sort="6"]{
+    display: block;
+}
+.sel[data-sort="7"] option[data-sort="7"]{
+    display: block;
+}
+.sel[data-sort="8"] option[data-sort="8"]{
+    display: block;
+}
+.sel[data-sort="9"] option[data-sort="9"]{
+    display: block;
+}
+.sel[data-sort="10"] option[data-sort="10"]{
+    display: block;
+}
+.sel[data-sort="11"] option[data-sort="11"]{
+    display: block;
+}
+.sel[data-sort="12"] option[data-sort="12"]{
+    display: block;
+}
+.sel[data-sort="13"] option[data-sort="13"]{
+    display: block;
+}
+
+.iptColse{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    display: none;
+    transition: 0.3s;
+}
+
+.iptColse:hover{
+    border: 2px solid #ccc;
+}
+
+.iptColse:hover::after,
+.iptColse:hover::before{
+    background-color: #ccc;
+}
+
+.iptColse::after,
+.iptColse::before{
+    content: '';
+    width: 70%;
+    height: 2px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.3s;
+}
+
+.iptColse::before{
+    transform: rotate(45deg);
+}
+
+.iptColse::after{
+    transform: rotate(-45deg);
+}
+
+
+/* ===== minBtnBox  start ===== */
+
+.minBtnBox{
+    width: 100%;
+    display: none;
+}
+
+.minBtnBox ul{
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.minBtnBox li{
+    width: calc(100% / 3);
+    max-width: 200px;
+    cursor: pointer;
+    position: relative;
+    filter: drop-shadow(4px 4px 2px rgba(23, 12, 37, 0.8));
+}
+.minBtnBox li+li{
+    margin-left: 5px;
+}
+
+.minBtnBox li span{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 2.7vw;
+    color: #fff;
+    opacity: 0.8;
+}
+
+
+/* ===== RWD 設定 ===== */
+
+@media screen and (max-width: 1100px){
+    .minBtnBox{
+        display: block;
+    }
+
+    .showBox{
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .iptBox{
+        width: 100vw;
+        height: 100vh;
+        max-width: unset;
+        padding-top: 80px;
+        margin-left: 0;
+        justify-content: flex-start;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    .iptColse{
+        display: block;
+    }
+
+    .iptBox,
+    .selBox,
+    .textBox,
+    .textBox input,
+    .textBox textarea{
+        display: none;
+    }
+
+    .iptBox.on,
+    .textBox.on{
+        display: flex;
+    }
+
+    .textBox input.on,
+    .textBox textarea.on{
+        display: block;
+    }
+    .selBox.on{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .gameBox{
+        justify-content: unset;
+    }
+
+    .iptBox{
+        min-width: 100%;
+        max-width: unset;
+    }    
+}
