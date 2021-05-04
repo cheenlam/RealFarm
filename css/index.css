@@ -361,57 +361,93 @@ textarea{
     letter-spacing: 2px;
     top: -9px;
     right: 1px;
-    color: #fff;
-    filter: drop-shadow(0px 2px 3px rgba(41, 3, 3, 0.8));
+    color: rgba(255, 255, 255, 0.815);
+    filter: drop-shadow(0px 2px 3px rgba(41, 3, 3, 0.9));
     z-index: 2;
 }
 
 .showlist li>div[data-num="1"] .listName,
 .showlist li>div[data-num="2"] .listName,
 .showlist li>div[data-num="3"] .listName,
-.showlist li>div[data-num="4"] .listName{
-    background-image: url(../img/event-label02.svg);
-}  
-
+.showlist li>div[data-num="4"] .listName,
 .showlist li>div[data-num="5"] .listName,
 .showlist li>div[data-num="6"] .listName,
 .showlist li>div[data-num="7"] .listName,
 .showlist li>div[data-num="8"] .listName,
-.showlist li>div[data-num="9"] .listName,
-.showlist li>div[data-num="10"] .listName{
-    background-image: url(../img/event-label03.svg);
+.showlist li>div[data-num="9"] .listName{
+    background-image: url(../img/event-label02.svg);
 }  
 
+.showlist li>div[data-num="10"] .listName,
 .showlist li>div[data-num="11"] .listName,
 .showlist li>div[data-num="12"] .listName,
 .showlist li>div[data-num="13"] .listName,
-.showlist li>div[data-num="14"] .listName{
-    background-image: url(../img/event-label05.svg);
+.showlist li>div[data-num="14"] .listName,
+.showlist li>div[data-num="15"] .listName{
+    background-image: url(../img/event-label03.svg);
 }  
 
-.showlist li>div[data-num="15"] .listName,
 .showlist li>div[data-num="16"] .listName,
 .showlist li>div[data-num="17"] .listName,
-.showlist li>div[data-num="18"] .listName{
-    background-image: url(../img/event-label01.svg);
-}  
-
+.showlist li>div[data-num="18"] .listName,
 .showlist li>div[data-num="19"] .listName,
 .showlist li>div[data-num="20"] .listName,
 .showlist li>div[data-num="21"] .listName,
-.showlist li>div[data-num="22"] .listName{
-    background-image: url(../img/event-label06.svg);
-    color: #745331;
+.showlist li>div[data-num="22"] .listName,
+.showlist li>div[data-num="23"] .listName,
+.showlist li>div[data-num="24"] .listName,
+.showlist li>div[data-num="25"] .listName,
+.showlist li>div[data-num="26"] .listName,
+.showlist li>div[data-num="27"] .listName,
+.showlist li>div[data-num="28"] .listName,
+.showlist li>div[data-num="29"] .listName,
+.showlist li>div[data-num="30"] .listName,
+.showlist li>div[data-num="31"] .listName,
+.showlist li>div[data-num="32"] .listName{
+    background-image: url(../img/event-label04.svg);
+}  
+
+.showlist li>div[data-num="33"] .listName,
+.showlist li>div[data-num="34"] .listName,
+.showlist li>div[data-num="35"] .listName,
+.showlist li>div[data-num="36"] .listName,
+.showlist li>div[data-num="37"] .listName,
+.showlist li>div[data-num="38"] .listName{
+    background-image: url(../img/event-label05.svg);
+}  
+
+.showlist li>div[data-num="39"] .listName,
+.showlist li>div[data-num="40"] .listName,
+.showlist li>div[data-num="41"] .listName,
+.showlist li>div[data-num="42"] .listName,
+.showlist li>div[data-num="43"] .listName,
+.showlist li>div[data-num="44"] .listName,
+.showlist li>div[data-num="45"] .listName,
+.showlist li>div[data-num="46"] .listName,
+.showlist li>div[data-num="47"] .listName,
+.showlist li>div[data-num="48"] .listName,
+.showlist li>div[data-num="49"] .listName,
+.showlist li>div[data-num="50"] .listName,
+.showlist li>div[data-num="51"] .listName,
+.showlist li>div[data-num="52"] .listName,
+.showlist li>div[data-num="53"] .listName,
+.showlist li>div[data-num="54"] .listName,
+.showlist li>div[data-num="55"] .listName,
+.showlist li>div[data-num="56"] .listName,
+.showlist li>div[data-num="57"] .listName,
+.showlist li>div[data-num="58"] .listName,
+.showlist li>div[data-num="59"] .listName{
+    background-image: url(../img/event-label01.svg);
 }  
 
 
 .showlist .listTitle p{
     max-width: 135px;
     overflow: hidden;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #b35f28;
-    margin-top: 1px;
+    margin-top: 4px;
 }
 
 .showlist li:hover .del{
