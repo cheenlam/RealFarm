@@ -211,7 +211,7 @@ $('#sort').change(function(){
 
 $('#pwdBtn').click(function(){
     var pwd = $('#pwdIpt').val();
-    if(pwd == '使用密碼'){
+    if(pwd == '遊戲ID'){
         $('#pwdBox').addClass('on')
     }
 })
