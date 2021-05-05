@@ -209,6 +209,14 @@ $('#sort').change(function(){
 })
 
 
+$('#pwdBtn').click(function(){
+    var pwd = $('#pwdIpt').val();
+    if(pwd == '使用密碼'){
+        $('#pwdBox').addClass('on')
+    }
+})
+
+
 // ===== 函式區塊 =====
 // 展示區域自適應縮放
 function reShowBox() {
