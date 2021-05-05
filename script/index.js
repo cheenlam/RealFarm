@@ -158,6 +158,9 @@ $("#btn2").click(function () {
             case "57": addList(57, "塑膠", price); break;
             case "58": addList(58, "鐮刀刀刃", price); break;
             case "59": addList(59, "樹枝", price); break;
+            // 飾品製作材料
+            case "60": addList(60, "人造鑽石", price); break;
+            case "61": addList(61, "高級鑽石", price); break;
         }
         showList()
     }
