@@ -1,6 +1,7 @@
 reShowBox()
 $(window).resize(function () {
-    reShowBox()
+    reShowBox();
+    closeIpt();
 })
 
 let index = 0;
@@ -177,10 +178,6 @@ list.addEventListener('click', function (e) {
             localStorage.setItem("saveList2", saveList)
         }
 
-
-        // listData.splice(num, 1)
-        // let saveList = JSON.stringify(listData)
-        // localStorage.setItem("saveList", saveList)
         showList()
     }
 })
@@ -205,6 +202,11 @@ $('#iptColse').click(function () {
     closeIpt()
 });
 
+$('#sort').change(function(){
+    let data = $(this).val()
+    $('#sel').attr("data-sort",data)
+    $('#sel').val("0")
+})
 
 
 // ===== 函式區塊 =====
