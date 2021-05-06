@@ -1,6 +1,22 @@
+let startPwd;
+let startTime;
+if (localStorage.getItem("pwdID") == null) {
+    startPwd = '';
+    startTime = '';
+} else {
+    let data = JSON.parse(localStorage.getItem("pwdID"))
+    startPwd = data[0].setPwd;
+    startTime = data[0].setTime
+}
+
+let startData = [{ setPwd: startPwd, setTime: startTime }]
+let saveStart = JSON.stringify(startData)
+localStorage.setItem("pwdID", saveStart)
 
 addIDBox()
+startCk()
 reShowBox()
+
 
 $(window).resize(function () {
     reShowBox();
@@ -51,13 +67,13 @@ $("#btn").click(function () {
                 title.innerHTML = localStorage.getItem("name2");
             }
         }
-        
+
         console.log(iptText.innerHTML)
 
-        if(index == 0){
+        if (index == 0) {
             localStorage.setItem("msg", iptText.innerHTML)
             msgBox.innerHTML = localStorage.getItem("msg")
-        }else{
+        } else {
             localStorage.setItem("msg2", iptText.innerHTML)
             msgBox.innerHTML = localStorage.getItem("msg2")
         }
@@ -301,22 +317,46 @@ function showList() {
     list.innerHTML = str;
 }
 
+// 初始確認
+function startCk() {
+    let ck = localStorage.getItem("pwdID");
+    let data = JSON.parse(ck)
+    let nowTime = parseInt((new Date().getTime()) / 1000);
+    let timeCut = nowTime - data[0].setTime > 3600;
+
+    if (data[0].setPwd == '遊戲ID' && !timeCut) {
+        $('#pwdBox').remove()
+    }
+}
+
 // 確認ID是否正確
 function ckID() {
-    let ck = localStorage.getItem("pwdID");
-    if (ck == '遊戲ID') {
-        return true;
-    } else {
+    if (localStorage.getItem("pwdID") == null) {
         addIDBox()
-        return false;
+    } else {
+        let ck = localStorage.getItem("pwdID");
+        let data = JSON.parse(ck)
+        let nowTime = parseInt((new Date().getTime()) / 1000);
+
+        let timeCut = nowTime - data[0].setTime > 3600;
+        if (data[0].setPwd == '遊戲ID' && !timeCut) {
+            return true;
+        } else {
+            addIDBox()
+            return false;
+        }
     }
 }
 
 // 輸入遮罩密碼
-function addPwdID(){
+function addPwdID() {
     let pwd = $('#pwdIpt').val();
-    if (pwd == '遊戲ID') {
-        localStorage.setItem("pwdID", '遊戲ID')
+    let time = parseInt((new Date().getTime()) / 1000);
+    let idData = [{ setPwd: pwd, setTime: time }]
+
+    if (idData[0].setPwd == '遊戲ID') {
+        let data = JSON.stringify(idData)
+        localStorage.setItem("pwdID", data)
         $('#pwdBox').remove()
     }
 }
