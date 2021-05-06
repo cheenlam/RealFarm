@@ -200,12 +200,12 @@ $('#minBtnBox li').click(function () {
     if (ckID()) {
         var index = $('#minBtnBox li').index(this);
         $('.iptBox').addClass('on');
-        $('.textBox ,.textBox input,.textBox textarea,.selBox').removeClass('on')
+        $('.textBox ,.textBox input,.textBox .iptText,.selBox').removeClass('on')
         switch (index) {
             case 0:
                 $('.textBox ,.textBox input').addClass('on'); break;
             case 1:
-                $('.textBox ,.textBox textarea').addClass('on'); break;
+                $('.textBox ,.textBox .iptText').addClass('on'); break;
             case 2:
                 $('.selBox').addClass('on'); break;
         }

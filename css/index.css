@@ -6,7 +6,7 @@ img{
     vertical-align: middle;
 }
 
-textarea{
+/* textarea{
     width: 242px;
     height: 300px;
     padding: 10px;
@@ -14,7 +14,7 @@ textarea{
     overflow: hidden;
     font-size: 18px;
     outline: none;
-}
+} */
 
 .pwdBox{
     width: 100%;
@@ -892,7 +892,7 @@ textarea{
     .selBox,
     .textBox,
     .textBox input,
-    .textBox textarea{
+    .textBox .iptText{
         display: none;
     }
 
@@ -901,7 +901,7 @@ textarea{
     }
 
     .textBox input.on,
-    .textBox textarea.on{
+    .textBox .iptText.on{
         display: block;
     }
     .selBox.on{
