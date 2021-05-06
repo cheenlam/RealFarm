@@ -1,17 +1,17 @@
 let startPwd;
 let startTime;
-if (localStorage.getItem("pwdID") == null) {
+if (localStorage.getItem("saveID") == null) {
     startPwd = '';
     startTime = '';
 } else {
-    let data = JSON.parse(localStorage.getItem("pwdID"))
+    let data = JSON.parse(localStorage.getItem("saveID"))
     startPwd = data[0].setPwd;
     startTime = data[0].setTime
 }
 
 let startData = [{ setPwd: startPwd, setTime: startTime }]
 let saveStart = JSON.stringify(startData)
-localStorage.setItem("pwdID", saveStart)
+localStorage.setItem("saveID", saveStart)
 
 addIDBox()
 startCk()
@@ -319,7 +319,7 @@ function showList() {
 
 // 初始確認
 function startCk() {
-    let ck = localStorage.getItem("pwdID");
+    let ck = localStorage.getItem("saveID");
     let data = JSON.parse(ck)
     let nowTime = parseInt((new Date().getTime()) / 1000);
     let timeCut = nowTime - data[0].setTime > 3600;
@@ -331,10 +331,10 @@ function startCk() {
 
 // 確認ID是否正確
 function ckID() {
-    if (localStorage.getItem("pwdID") == null) {
+    if (localStorage.getItem("saveID") == null) {
         addIDBox()
     } else {
-        let ck = localStorage.getItem("pwdID");
+        let ck = localStorage.getItem("saveID");
         let data = JSON.parse(ck)
         let nowTime = parseInt((new Date().getTime()) / 1000);
 
@@ -356,7 +356,7 @@ function addPwdID() {
 
     if (idData[0].setPwd == '遊戲ID') {
         let data = JSON.stringify(idData)
-        localStorage.setItem("pwdID", data)
+        localStorage.setItem("saveID", data)
         $('#pwdBox').remove()
     }
 }
