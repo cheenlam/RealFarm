@@ -675,7 +675,9 @@ textarea{
 
 #editor{
    width: 243px;
-   height: 300px;
+   height: 260px;
+   padding-left: 20px;
+   padding-right: 20px;
 }
 
 .ql-editor li,
