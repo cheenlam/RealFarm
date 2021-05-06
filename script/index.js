@@ -17,11 +17,11 @@ $('.showBtn').click(function () {
         index = $('#showBox .showBtn').index(".showBtn.on")
         if (index == 0) {
             title.innerHTML = localStorage.getItem("name");
-            msgBox.value = localStorage.getItem("msg");
+            msgBox.innerHTML = localStorage.getItem("msg");
 
         } else {
             title.innerHTML = localStorage.getItem("name2");
-            msgBox.value = localStorage.getItem("msg2");
+            msgBox.innerHTML = localStorage.getItem("msg2");
         }
         showList()
     }
@@ -29,18 +29,19 @@ $('.showBtn').click(function () {
 
 
 // 填入遊戲ID與訊息
-var title = document.querySelector('#showName');
-var msgBox = document.querySelector('#showMsg');
-var iptName = document.querySelector('#iptName');
-var iptText = document.querySelector('#iptText');
-var nowId = localStorage.getItem("name");
-var nowmag = localStorage.getItem("msg");
+let title = document.querySelector('#showName');
+let msgBox = document.querySelector('#showMsg');
+let iptName = document.querySelector('#iptName');
+let iptText = document.querySelector('#editor');
+let nowId = localStorage.getItem("name");
+let nowmag = localStorage.getItem("msg");
 
 title.innerHTML = nowId == null || '' ? "輸入遊戲ID" : nowId
-msgBox.value = nowmag == null || '' ? "輸入訊息" : nowmag
+msgBox.innerHTML = nowmag == null || '' ? "輸入訊息" : nowmag
 
 $("#btn").click(function () {
     if (ckID()) {
+
         if ($("#iptName").val() != '') {
             if (index == 0) {
                 localStorage.setItem("name", iptName.value)
@@ -49,21 +50,20 @@ $("#btn").click(function () {
                 localStorage.setItem("name2", iptName.value)
                 title.innerHTML = localStorage.getItem("name2");
             }
-
         }
+        
+        console.log(iptText.innerHTML)
 
-        if ($("#iptText").val() != '') {
-            if (index == 0) {
-                localStorage.setItem("msg", iptText.value)
-                msgBox.value = localStorage.getItem("msg")
-            } else {
-                localStorage.setItem("msg2", iptText.value)
-                msgBox.value = localStorage.getItem("msg2")
-            }
+        if(index == 0){
+            localStorage.setItem("msg", iptText.innerHTML)
+            msgBox.innerHTML = localStorage.getItem("msg")
+        }else{
+            localStorage.setItem("msg2", iptText.innerHTML)
+            msgBox.innerHTML = localStorage.getItem("msg2")
         }
 
         iptName.value = ''
-        iptText.value = ''
+        document.querySelector('#editor .ql-editor').innerHTML = ''
         closeIpt()
     }
 

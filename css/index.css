@@ -183,7 +183,7 @@ textarea{
     font-size: 25px;
     position: absolute;
     top: 17px;
-    left: 150px;
+    left: 149px;
     color: #fff;
     opacity: 0.6;
     font-weight: bold;
@@ -191,9 +191,11 @@ textarea{
 }
 
 .showMsg{
+    width: 240px;
+    height: 300px;
     position: absolute;
-    top: 119px;
-    left: 28px;
+    top: 122px;
+    left: 37px;
     color: rgb(131, 18, 18); 
     background: transparent;
     border: none;  
@@ -214,7 +216,6 @@ textarea{
     padding: 5px 10px;
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 .showlist li{
@@ -665,8 +666,30 @@ textarea{
 }
 
 .iptText{
+   width: 242px;
+   background-color: #fff;
    margin-bottom: 5px;
    border: none;
+   overflow: hidden;
+}
+
+#editor{
+   width: 243px;
+   height: 300px;
+}
+
+.ql-editor li,
+#editor li{
+    padding-left: 0 !important;
+}
+
+.ql-editor::-webkit-scrollbar{
+    width: 0 !important;
+    background-color: #0000;
+}
+
+.ql-editor *{
+    background-color: transparent !important;
 }
 
 .selBox>div{
