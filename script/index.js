@@ -317,6 +317,8 @@ function showList() {
     list.innerHTML = str;
 }
 
+
+
 // 初始確認
 function startCk() {
     let ck = localStorage.getItem("saveID");
@@ -337,11 +339,23 @@ function ckID() {
         let ck = localStorage.getItem("saveID");
         let data = JSON.parse(ck)
         let nowTime = parseInt((new Date().getTime()) / 1000);
-
         let timeCut = nowTime - data[0].setTime > 3600;
+
+        let blacklist = ['簡東東', '蚵仔煎是隻貓']
+        let ckList = false;
+        for (let i = 0; i < blacklist.length; i++) {
+            if (data[0].setPwd == blacklist[i]) {
+                ckList = true
+            }
+        }
+
         if (data[0].setPwd == '遊戲ID' && !timeCut) {
             return true;
-        } else {
+        }
+        else if (ckList) {
+            closeNow()
+        }
+        else {
             addIDBox()
             return false;
         }
@@ -354,10 +368,21 @@ function addPwdID() {
     let time = parseInt((new Date().getTime()) / 1000);
     let idData = [{ setPwd: pwd, setTime: time }]
 
+    let blacklist = ['簡東東', '蚵仔煎是隻貓']
+    let ckList = false;
+    for (let i = 0; i < blacklist.length; i++) {
+        if (idData[0].setPwd == blacklist[i]) {
+            ckList = true
+        }
+    }
+
     if (idData[0].setPwd == '遊戲ID') {
         let data = JSON.stringify(idData)
         localStorage.setItem("saveID", data)
         $('#pwdBox').remove()
+    }
+    else if (ckList) {
+        closeNow()
     }
 }
 
@@ -380,4 +405,12 @@ function addIDBox() {
     $("body").prepend(iptData);
 };
 
+
+function closeNow() {
+    alert(" 幹!! 誰准你使用的 !? ")
+    alert(" 去死!! 巴結狗 ! ")
+    alert(" 滾!! ")
+
+    window.close();
+}
 
