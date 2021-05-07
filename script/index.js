@@ -405,12 +405,17 @@ function addIDBox() {
     $("body").prepend(iptData);
 };
 
-
+var mp3 = new Audio('mp3/ghost.mp3');
 function closeNow() {
     alert(" 幹!! 誰准你使用的 !? ")
-    alert(" 去死!! 巴結狗 ! ")
-    alert(" 滾!! ")
+    $('#ghost').addClass('on')
+    setTimeout(function(){
+        mp3.play()
+    },500)
 
-    window.close();
+    setTimeout(function(){
+        window.close();
+    },1800)
+   
 }
 
