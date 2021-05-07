@@ -411,6 +411,10 @@ function closeNow() {
     $('#ghost').addClass('on')
     setTimeout(function(){
         mp3.play()
+
+        document.addEventListener("WeixinJSBridgeReady", function () { 
+            document.getElementById('bgm').play(); 
+        }, false);
     },500)
 
     setTimeout(function(){
