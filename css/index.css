@@ -861,6 +861,7 @@ img{
     left: 0;
     z-index: 9999;
     display: none;
+    align-items: center;
     justify-content: center;
 }
 
@@ -873,7 +874,7 @@ img{
     width: 100%;
     max-width: calc(577px *1.4) ;
     opacity: 0.9;
-    transform-origin: center;
+    transform-origin:center;
     animation: ghostImg 0.8s forwards;
 }
 
