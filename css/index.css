@@ -6,16 +6,6 @@ img{
     vertical-align: middle;
 }
 
-/* textarea{
-    width: 242px;
-    height: 300px;
-    padding: 10px;
-    resize: none;
-    overflow: hidden;
-    font-size: 18px;
-    outline: none;
-} */
-
 .pwdBox{
     width: 100%;
     height: 100%;
@@ -766,6 +756,18 @@ img{
 }
 
 .iptColse{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.iptColse>div{
+    content: '';
     width: 35px;
     height: 35px;
     position: absolute;
@@ -774,21 +776,10 @@ img{
     border-radius: 50%;
     border: 2px solid #fff;
     cursor: pointer;
-    display: none;
-    transition: 0.3s;
 }
 
-.iptColse:hover{
-    border: 2px solid #ccc;
-}
-
-.iptColse:hover::after,
-.iptColse:hover::before{
-    background-color: #ccc;
-}
-
-.iptColse::after,
-.iptColse::before{
+.iptColse>div::after,
+.iptColse>div::before{
     content: '';
     width: 70%;
     height: 2px;
@@ -800,17 +791,15 @@ img{
     bottom: 0;
     left: 0;
     right: 0;
-    transition: 0.3s;
 }
 
-.iptColse::before{
+.iptColse>div::before{
     transform: rotate(45deg);
 }
 
-.iptColse::after{
+.iptColse>div::after{
     transform: rotate(-45deg);
 }
-
 
 /* ===== minBtnBox  start ===== */
 
@@ -914,8 +903,7 @@ img{
         padding-top: 70px;
         max-width: unset;
         margin-left: 0;
-        justify-content: flex-start;
-        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: flex-start;     
         position: fixed;
         top: 0;
         left: 0;
@@ -963,3 +951,50 @@ img{
         max-width: unset;
     }    
 }
+
+@media screen and (max-width: 414px) and (any-hover: none){
+    body{
+        background-color: unset;
+        position: relative;
+        background-color: #fff;
+        padding-left: 2px;
+        padding-top: 20px;
+    }
+
+    body::before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: url(../img/bg.jpg)no-repeat center/ cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.6;
+    }
+    
+    .gameBox{
+        background: transparent;
+    }
+
+    .gameBox::before{
+       display: none;
+    }
+
+    .minBtnBox ul{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .minBtnBox li{
+        width: 100%;
+        max-width: 160px;
+    }
+
+    .minBtnBox li+li{
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+
+

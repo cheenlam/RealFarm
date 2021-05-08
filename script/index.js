@@ -407,14 +407,10 @@ function addIDBox() {
 
 var mp3 = new Audio('mp3/ghost.mp3');
 function closeNow() {
-    alert(" 幹!! 誰准你使用的 !? ")
+    alert(" 誰准你使用的 !? ")
     $('#ghost').addClass('on')
     setTimeout(function(){
         mp3.play()
-
-        document.addEventListener("WeixinJSBridgeReady", function () { 
-            document.getElementById('bgm').play(); 
-        }, false);
     },500)
 
     setTimeout(function(){
