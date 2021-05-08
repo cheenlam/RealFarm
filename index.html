@@ -6,18 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="瘋種菜買賣編輯網頁"/>
-    <meta property="og:image" content="img/bg02.png"/>
+    <meta property="og:title" content="瘋種菜買賣編輯網頁" />
+    <meta property="og:image" content="img/bg02.png" />
 
     <link rel="icon" type="image/gif" href="img/bg02.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
-        integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=='
-        crossorigin='anonymous'></script>
-        
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+
     <title>瘋種菜買賣編輯</title>
 </head>
 
@@ -32,13 +30,18 @@
 
             <!-- 遊戲ID和訊息 -->
             <div class="showName" id="showName">輸入遊戲ID</div>
-            <div class="showMsg" id="showMsg" disabled ></div>
+            <div class="showMsg" id="showMsg" disabled></div>
             <!-- <textarea class="showMsg" id="showMsg" disabled>輸入訊息</textarea> -->
             <!-- 清單 -->
             <div class="showlist">
                 <ul id="list">
                 </ul>
             </div>
+
+            <!-- 自設圖片 -->
+            <!-- <div class="showSelfImg" id="showSelfImg" draggable="true">
+                <img id="selfImg" src="" />
+            </div> -->
         </div>
 
         <!-- ===== minBtnBox  start ===== -->
@@ -56,6 +59,10 @@
                     <span>增加清單</span>
                     <img src="img/mainSort_btn.png">
                 </li>
+                <!-- <li>
+                    <span>增設頭貼</span>
+                    <img src="img/mainSort_btn.png">
+                </li> -->
             </ul>
         </div>
 
@@ -179,7 +186,18 @@
 
                 <button id="btn2"><span>增加清單</span></button>
             </div>
+
+            <div class="addImgBox">
+                <div>
+                    <input type="file" targetID="selfImg" accept="image/gif, image/jpeg, image/png" id="imgSel" />
+                </div>
+
+                <button id="selfBtn01"><span>變更</span></button>
+                <button id="selfBtn02"><span>清除</span></button>
+            </div>
+
         </div>
+
     </div>
 
     <div class="ghost" id="ghost">
@@ -189,15 +207,77 @@
         <audio src="mp3/ghost.mp3" autoplay id='bgm' loop></audio>
     </div>
 
-    
+
     <script src="script/index.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-      <script>
+    <script>
         var quill = new Quill('#editor', {
-          theme: 'snow'
+            theme: 'snow'
         });
         $('#editor input,#editor a').remove()
-      </script>
+
+
+        // var selfImg = document.querySelector('#selfImg')
+        // var imgSel = document.querySelector('#imgSel')
+        // var nowImg = localStorage.getItem("selfImg")
+        // localStorage.setItem("selfImg", nowImg == null ? '' : nowImg)
+        // selfImg.setAttribute("src", nowImg == null ? '' : nowImg)
+
+        // $('#imgSel').change(function() {
+        //     $('#selfBtn01').click(function() {
+        //         console.log(imgSel)
+        //         readURL(imgSel)
+        //     })
+        // })
+
+        // $('#selfBtn02').click(function() {
+        //     selfImg.setAttribute("src", '')
+        //     localStorage.setItem("selfImg", '')
+        // })
+
+        // function readURL(input) {
+        //     if (input.files && input.files[0]) {
+        //         var imageTagID = input.getAttribute("targetID");
+        //         var reader = new FileReader();
+        //         reader.onload = function(e) {
+        //             var img = document.getElementById(imageTagID);
+        //             localStorage.setItem("selfImg", e.target.result)
+        //             img.setAttribute("src", localStorage.getItem("selfImg"))
+        //         }
+        //         reader.readAsDataURL(input.files[0]);
+        //     }
+        // }
+
+
+        // var aa = document.querySelector('#showSelfImg')
+        // var bb = document.querySelector('#showBox')
+        // var a1 = false;
+        // var bx;
+        // var by;
+
+        // var ww = $('#showSelfImg').width()
+        // var hh = $('#showSelfImg').height()
+
+        // $('#showSelfImg').click(function() {
+        //     a1 = !a1;
+
+        //     if (a1 == true) {
+        //         $('#showSelfImg').addClass('on')
+        //     } else {
+        //         $('#showSelfImg').removeClass('on')
+        //     }
+        // })
+
+        // $('#showBox').mousemove(function(e) {
+        //     var hh = ($('#showSelfImg').height()) / 2
+        //     if (a1) {
+        //         bx = e.clientX
+        //         by = e.clientY
+        //         $('#showSelfImg').css('top', by - hh)
+        //         $('#showSelfImg').css('left', bx - ww)
+        //     }
+        // })
+    </script>
 </body>
 
 </html>
