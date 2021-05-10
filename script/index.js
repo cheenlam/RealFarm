@@ -468,7 +468,7 @@ function ckID() {
         let nowTime = parseInt((new Date().getTime()) / 1000);
         let timeCut = nowTime - data[0].setTime > 3600;
 
-        let blacklist = ['簡東東', '蚵仔煎是隻貓']
+        let blacklist = ['簡東東', '蚵仔煎是隻貓', '貓貓哥']
         let ckList = false;
         for (let i = 0; i < blacklist.length; i++) {
             if (data[0].setPwd == blacklist[i]) {
@@ -493,7 +493,7 @@ function addPwdID() {
     let time = parseInt((new Date().getTime()) / 1000);
     let idData = [{ setPwd: pwd, setTime: time }]
 
-    let blacklist = ['簡東東', '蚵仔煎是隻貓']
+    let blacklist = ['簡東東', '蚵仔煎是隻貓', '貓貓哥']
     let ckList = false;
     for (let i = 0; i < blacklist.length; i++) {
         if (idData[0].setPwd == blacklist[i]) {
